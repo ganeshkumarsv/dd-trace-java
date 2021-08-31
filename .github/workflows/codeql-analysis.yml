@@ -60,7 +60,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       sudo apt-get update && sudo apt-get install openjdk-11-jdk
+       sudo apt-get update && sudo apt-get install openjdk-11-jdk && ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
