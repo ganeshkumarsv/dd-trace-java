@@ -34,19 +34,21 @@ public class HandlerMappingResourceNameFilter extends OncePerRequestFilter imple
 
     final Object parentSpan = request.getAttribute(DD_SPAN_ATTRIBUTE);
 
-    if (parentSpan instanceof AgentSpan && !handlerMappings.isEmpty()) {
-      try {
-        if (findMapping(request)) {
-          // Name the parent span based on the matching pattern
-          // Let the parent span resource name be set with the attribute set in findMapping.
-          DECORATE.onRequest((AgentSpan) parentSpan, request, request, null);
+    try {
+      filterChain.doFilter(request, response);
+    } finally {
+      if (parentSpan instanceof AgentSpan) {
+        try {
+          if (findMapping(request)) {
+            // Name the parent span based on the matching pattern
+            // Let the parent span resource name be set with the attribute set in findMapping.
+            DECORATE.onRequest((AgentSpan) parentSpan, request, request, null);
+          }
+        } catch (final Exception ignored) {
+          // mapping.getHandler() threw exception.  Ignore
         }
-      } catch (final Exception ignored) {
-        // mapping.getHandler() threw exception.  Ignore
       }
     }
-
-    filterChain.doFilter(request, response);
   }
 
   /**
@@ -55,6 +57,9 @@ public class HandlerMappingResourceNameFilter extends OncePerRequestFilter imple
    * SpringWebHttpServerDecorator.onRequest and set as the resource name.
    */
   private boolean findMapping(final HttpServletRequest request) throws Exception {
+    if (request.getAttribute(HandlerMapping.BEST_MATCHING_PATTERN_ATTRIBUTE) != null) {
+      return true;
+    }
     for (final HandlerMapping mapping : handlerMappings) {
       final HandlerExecutionChain handler = mapping.getHandler(request);
       if (handler != null) {
