@@ -60,7 +60,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       "-Dorg.gradle.jvmargs='-Xmx1G -Xms64M' -Ddatadog.forkedMaxHeapSize=1G -Ddatadog.forkedMinHeapSize=64M" ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
+       ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
