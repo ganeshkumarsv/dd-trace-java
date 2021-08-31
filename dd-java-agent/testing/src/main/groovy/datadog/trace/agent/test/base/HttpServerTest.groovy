@@ -69,7 +69,7 @@ abstract class HttpServerTest<SERVER> extends WithHttpServer<SERVER> {
     def callbacks = new IGCallbacks()
     ig.registerCallback(Events.REQUEST_STARTED, callbacks.requestStartedCb)
     ig.registerCallback(Events.REQUEST_HEADER, callbacks.requestHeaderCb)
-    ig.registerCallback(Events.REQUEST_URI_RAW, callbacks.requestUriRawCb)
+    ig.registerCallback(Events.REQUEST_METHOD_URI_RAW, callbacks.requestUriRawCb)
     ig.registerCallback(Events.REQUEST_BODY_START, callbacks.requestBodyStartCb)
     ig.registerCallback(Events.REQUEST_BODY_DONE, callbacks.requestBodyEndCb)
   }
