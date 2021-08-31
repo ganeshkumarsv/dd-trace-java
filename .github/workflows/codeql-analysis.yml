@@ -60,7 +60,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       apt-get update && apt-get install openjdk-11-jdk
+       sudo apt-get update && sudo apt-get install openjdk-11-jdk
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
