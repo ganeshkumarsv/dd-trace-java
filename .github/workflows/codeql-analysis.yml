@@ -36,7 +36,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - run: |
-       sudo apt-get update && sudo apt-get install openjdk-11-jdk && JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
+       JAVA_11_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
