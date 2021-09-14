@@ -36,9 +36,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - name: Build dd-trace-java for creating the CodeQL database
-      run: ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
-      env:
-        JAVA_11_HOME: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+      run: JAVA_11_HOME=$JAVA_HOME_11_X64 ./gradlew clean :dd-java-agent:shadowJar --build-cache --parallel --stacktrace --no-daemon --max-workers=8
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
