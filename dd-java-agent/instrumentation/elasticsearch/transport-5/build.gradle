@@ -35,8 +35,8 @@ dependencies {
   testImplementation project(':dd-java-agent:instrumentation:netty-4.1')
   testImplementation project(':dd-java-agent:instrumentation:elasticsearch:transport')
 
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.20.0'
 
   testImplementation group: 'org.elasticsearch.plugin', name: 'transport-netty3-client', version: '5.0.0'
   testImplementation group: 'org.elasticsearch.client', name: 'transport', version: '5.0.0'

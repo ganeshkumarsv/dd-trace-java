@@ -29,8 +29,8 @@ dependencies {
   // Netty is used, but it adds complexity to the tests since we're using embedded ES.
   //testImplementation project(':dd-java-agent:instrumentation:netty-4.1')
 
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.20.0'
 
   testImplementation group: 'org.elasticsearch.client', name: 'elasticsearch-rest-client', version: '6.4.0'
   testImplementation group: 'org.elasticsearch', name: 'elasticsearch', version: '6.4.0'
