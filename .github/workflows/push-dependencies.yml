@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Build DataDog agent
         run: |
-          pwd
           ls
       - name: Root Gradle Dependency Submission
         uses: mikepenz/gradle-dependency-submission@v0.8.6
