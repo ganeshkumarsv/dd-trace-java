@@ -42,7 +42,7 @@ muzzle {
     module = 'akka-http_2.12'
     versions = "[10.0.0,10.1.0)"
     // later versions of akka-http expect streams to be provided
-    extraDependency 'com.typesafe.akka:akka-stream_2.12:2.4.14'
+    extraDependency 'com.typesafe.akka:akka-stream_2.12:2.8.2'
   }
   pass {
     group = 'com.typesafe.akka'
@@ -56,7 +56,7 @@ muzzle {
     module = 'akka-http_2.12'
     versions = "[10.1.0,)"
     // later versions of akka-http expect streams to be provided
-    extraDependency 'com.typesafe.akka:akka-stream_2.12:2.5.11'
+    extraDependency 'com.typesafe.akka:akka-stream_2.12:2.8.2'
   }
   //There is no akka-http 10.0.x series for scala 2.13
   pass {
@@ -119,14 +119,14 @@ dependencies {
   version101TestImplementation deps.scala212
   version101TestImplementation group: 'com.typesafe.akka', name: 'akka-http_2.12', version: '10.1.+'
   version101TestImplementation group: 'com.typesafe.akka', name: 'akka-http2-support_2.12', version: '10.1.+'
-  version101TestImplementation group: 'com.typesafe.akka', name: 'akka-stream_2.12', version: '2.5.+'
+  version101TestImplementation group: 'com.typesafe.akka', name: 'akka-stream_2.12', version: '2.8.+'
 
   version101IastTestImplementation group: 'com.typesafe.akka', name: 'akka-http-jackson_2.12', version: '10.1.+'
   version101IastTestImplementation(testFixtures(project(':dd-java-agent:agent-iast')))
 
   version102IastTestImplementation deps.scala212
   version102IastTestImplementation group: 'com.typesafe.akka', name: 'akka-http_2.12', version: '10.2.+'
-  version102IastTestImplementation group: 'com.typesafe.akka', name: 'akka-stream_2.12', version: '2.6.+'
+  version102IastTestImplementation group: 'com.typesafe.akka', name: 'akka-stream_2.12', version: '2.8.+'
   version102IastTestImplementation group: 'com.typesafe.akka', name: 'akka-http-jackson_2.12', version: '10.2.+'
   version102IastTestImplementation(testFixtures(project(':dd-java-agent:agent-iast')))
 
