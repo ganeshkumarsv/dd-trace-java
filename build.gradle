@@ -178,7 +178,6 @@ def testAggregate(String baseTaskName, includePrefixes, excludePrefixes) {
   createRootTask "${baseTaskName}Check", 'check'
 }
 
-testAggregate("smoke", [":dd-smoke-tests"], [])
 testAggregate("instrumentation", [":dd-java-agent:instrumentation"], [])
 testAggregate("profiling", [":dd-java-agent:agent-profiling"], [])
 testAggregate("debugger", [":dd-java-agent:agent-debugger"], [])
