@@ -34,8 +34,8 @@ dependencies {
   testImplementation project(':dd-java-agent:instrumentation:apache-httpclient-4')
   testImplementation project(':dd-java-agent:instrumentation:apache-httpasyncclient-4')
 
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
-  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+  testImplementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.20.0'
 
   testImplementation group: 'org.elasticsearch.client', name: 'rest', version: '5.0.0'
   testImplementation group: 'org.elasticsearch', name: 'elasticsearch', version: '5.0.0'
